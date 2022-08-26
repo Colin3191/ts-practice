@@ -1,6 +1,6 @@
 export type BuildArray<
   Length extends number,
-  Item extends unknown,
+  Item extends unknown = unknown,
   Arr extends unknown[] = []
 > = Arr["length"] extends Length
   ? Arr

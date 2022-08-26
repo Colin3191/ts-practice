@@ -1,0 +1,11 @@
+{
+  "name": "ts-practice",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Colin3191/ts-practice.git",
+  "author": "wangchaomin <319151881@qq.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.8.2"
+  }
+}

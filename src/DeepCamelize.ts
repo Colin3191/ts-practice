@@ -1,3 +1,5 @@
+import { Camelcase } from "./Camelcase";
+
 type DeepCamelizeArr<Arr> = Arr extends [infer First, ...infer Rest]
   ? [DeepCamelize<First>, ...DeepCamelizeArr<Rest>]
   : [];
@@ -5,12 +7,8 @@ type DeepCamelizeArr<Arr> = Arr extends [infer First, ...infer Rest]
 type DeepCamelize<Obj> = Obj extends unknown[]
   ? DeepCamelizeArr<Obj>
   : {
-      [Key in keyof Obj as Camelize<Key & string>]: DeepCamelize<Obj[Key]>;
+      [Key in keyof Obj as Camelcase<Key & string>]: DeepCamelize<Obj[Key]>;
     };
-
-type Camelize<Str extends string> = Str extends `${infer First}_${infer Rest}`
-  ? `${First}${Capitalize<Camelize<Rest>>}`
-  : Str;
 
 type obj = {
   aaa_bbb: string;

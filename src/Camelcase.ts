@@ -1,4 +1,4 @@
-type Camelcase<Str extends string> =
+export type Camelcase<Str extends string> =
   Str extends `${infer Left}_${infer Right}${infer Rest}`
     ? `${Left}${Uppercase<Right>}${Camelcase<Rest>}`
     : Str;

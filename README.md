@@ -23,7 +23,7 @@ type BuildArray<
 构造数组 -> 合并数组 -> 求合并后的数组的长度
 
 ```typescript
-Add<Num1 extends number, Num2 extends number> = [
+type Add<Num1 extends number, Num2 extends number> = [
   ...BuildArray<Num1>,
   ...BuildArray<Num2>
 ]["length"];
@@ -63,7 +63,7 @@ type Mutiply<
 Num1 / Num2 可以看成 Num1 能够被 Num2 减多少次，直到 Num1 被减完。`CountArr`用来传递每次递归计算的结果。
 
 ```typescript
-Divide<
+type Divide<
   Num1 extends number,
   Num2 extends number,
   CountArr extends unknown[] = []
